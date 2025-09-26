@@ -46,59 +46,90 @@ body {
   height: 33%;
 }
 
-.share-container {
-  height: 40px;
+.footer {
   display: flex;
-  justify-content: center;
-  gap: 50px;
+  justify-content: space-between;
   align-items: center;
-  color: hsl(210, 46%, 95%);
-  background-color: hsl(217, 19%, 35%);
+  padding: 20px;
+  position: relative;
 }
 
+/* profile */
 .profile {
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  gap: 15px;
 }
-
 .profile-picture {
   width: 40px;
   border-radius: 50%;
-  margin-right: 20px;
 }
-
 .name {
+  font-size: 14px;
   color: hsl(217, 19%, 35%);
 }
-
 .date {
+  font-size: 12px;
   color: hsl(212, 23%, 69%);
 }
 
-.social-media-links {
-  height: 20px;
-}
-
+/* share button */
 .share-icon-container {
-  background-color: hsl(214, 17%, 51%);
+  background-color: hsl(210, 46%, 95%);
   border-radius: 50%;
-  padding: 5px;
-  width: 25px;
-  height: 25px;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.share-icon {
-  /*hsl(212, 23%, 69%)*/
+.share-icon-container:hover {
+  background-color: hsl(217, 19%, 35%);
   color: white;
 }
 
-.share-icon-container:hover {
-  background-color: #6e8098;
+/* popup default hidden */
+.share-popup {
+  display: none;
+  align-items: center;
+  gap: 15px;
+  background-color: hsl(217, 19%, 35%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 60px; /* desktop only */
+}
+.share-popup p {
+  letter-spacing: 5px;
+  text-transform: uppercase;
   color: hsl(212, 23%, 69%);
 }
 
-.attribution {
-  position: absolute;
-  bottom: 10px;
+/* active */
+.share-popup.active {
+  display: flex;
+}
+
+/* ✅ Mobile style (replace footer bar) */
+@media (max-width: 768px) {
+  .footer {
+    position: relative;
+  }
+
+  .share-popup {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 0 0 10px 10px;
+    justify-content: space-between;
+  }
+
+  .share-popup.active {
+    display: flex;
+    padding: 15px 25px;
+  }
 }
