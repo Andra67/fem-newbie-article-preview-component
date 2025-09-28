@@ -1,6 +1,12 @@
-const shareBtn = document.querySelector(".share-icon-container");
-const sharePopup = document.querySelector(".share-popup");
+const button = document.querySelector(".share-icon");
+const socialLinks = document.querySelector(".social-links");
 
-shareBtn.addEventListener("click", () => {
-  sharePopup.classList.toggle("active");
+button.addEventListener("click", () => {
+  socialLinks.classList.toggle("active");
+
+  if (button.classList.contains("share-active")) {
+    button.classList.remove("share-active", "share-active-img");
+  } else {
+    button.classList.add("share-active", "share-active-img");
+  }
 });
